@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+    <form action="{% url 'login' %}" method='post'>
+    {% csrf_token %}
+    {{form.as_p}}
+    <button type="submit">login</button>
+    {% if next %}
+    <input type="hidden" name="next" value="{{ next }}">
+     {% endif %}
+    </form>
+    if you dont  have an account <a href="{% url 'createaccount' %}">sign-in</a>
+{% endblock content %}
+{% block footer %}
+{% endblock footer %}

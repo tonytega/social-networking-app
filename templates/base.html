@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>weblog.com</title>
+    
+    <link rel='stylesheet' type='text/css' href="{% static 'style.css' %}"/>
+</head>
+<body><h1 class='green'>WEBLOG</h1>
+{% block content %}
+
+{% endblock %}
+{% block footer %}
+<footer>
+        <ul>
+            <li id='inline'><a href=""> Home</a></li>
+            <li id='inline'><a href="">search</a></li>
+            <li id='inline'><a href="">add</a></li>
+            <li id='inline'><a href="">profile</a></li>
+            {% load flatpages %}
+            {% get_flatpages as flatpages %}
+            {% for pages in flatpages  %}
+            <li id='inline'><a href="{{pages.get_absolute_url}}">about</a></li>
+            {% endfor %}
+            
+        </ul>
+</footer>
+{% endblock %}
+</body>
+</html>

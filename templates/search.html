@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+<body>
+<section>
+    <h1>TAGS</h1>
+<ul>{% for tags in tag.all %}
+    <li><a href="tags.tag_name">{{tags.tag_name|title}}</a></li>
+    {% endfor %}
+
+
+</body>
+{% endblock %}

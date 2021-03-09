@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<h3><em>WELCOME TO WEBLOG......where your thoughts live</em></h3>
+<section class='tag_section'>
+    <h2 class='green'>TAGS</h2>
+<ul>
+{% for tags in tag %}
+    <li><a href="{{ tags.get_absolute_url }}"># {{tags.tag_name|title}}</a></li>
+    {% endfor %}
+</ul>
+    {% if is_paginated %}
+        <ul>
+            {% if tag.has_previous %}
+                 <li><a href='{{prev_page_url}}'>Previous</a></li>
+            {% endif %}
+            {% if tag.has_next %}
+                <li><a href='{{ next_page_url }}'> Next </a></li>
+            {% endif %}
+        </ul>
+    {% endif %}
+    <p> page {{ tag.number }} of {{paginator.num_pages}}</p>
+    <p> <a href="{% url 'tag_form_create' %}">Create new tag</a> </p>
+    </section>
+<section class="diary_section">
+<h2 class='green'>Diaries For Your Pleasure</h1>
+<p>{% for friends in username.friends.all %}
+    <ul>
+        {% if friends == username %}
+        {% else %}
+            <p class='username'><a href='{{ friends.get_absolute_url }}'>{{ friends.username|title|lower }}</a></p>
+            {% for diary in friends.userpost.all %}
+            <ul class="un_ordered">
+            <p><a href="{{ diary.get_absolute_url }}"> {{ diary.userlogtitle }} </a> ({{diary.datecreated|timesince}}) ago</p>
+            <ul >
+                <p>{{ diary.userdiary }}</p>
+            </ul>
+            </ul>
+            {% endfor %}
+        
+
+        {% endif %}
+    </ul>
+    {% endfor %}
+
+</p>
+{% endblock %}
+</section>
