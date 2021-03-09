@@ -1,0 +1,74 @@
+/* links */
+a:link{
+    color:black;
+    text-decoration: none;
+}
+a:visited{
+    color: red;
+}
+a:hover{
+    color: green;
+}
+body{
+    padding: 50px;
+    background-color: rgba(50, 50, 50, 0.2);
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+/* weblog title */
+h1{
+    width: auto;
+    font-size: 40px;
+    letter-spacing: 2px;
+    font-family: cursive;
+    color: firebrick;
+    margin-left: 350px;
+    margin-top: 0px;
+    font-weight: 20000;
+    position: relative;
+    top: 0px;
+    
+}
+/* subheading */
+h2{
+    color: firebrick;
+    text-align: center;
+}
+
+/* taglist */
+.tag_section{
+    margin-left: 20pt;
+    margin-right: 50pt;
+    border: 2px solid;
+    width: 300px;
+    padding-left: 20px;
+    border-radius: 20px;
+    float: right;
+}
+/* diarysection */
+.diary_section{
+    width: 600px;
+    float: left;
+    margin-right: 30px;
+}
+/* username */
+.username{
+    margin-bottom: 20px;
+}
+/* .un_ordered{
+    
+} */
+
+/* footer */
+footer ul{
+    background-color: firebrick;
+    width: max-content;
+    padding: 0px 12px;
+    margin: 10px auto 10px auto;
+}
+#inline{
+    display: inline;
+    padding: 0px 12px;
+    color: white;
+    margin: 10px auto 10px auto;
+    font-size: 18px;
+}
